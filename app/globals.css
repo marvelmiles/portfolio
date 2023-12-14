@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  html,
+  body * {
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .paper {
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .paper.mini {
+    padding: 8px;
+  }
+
+  h4 ~ .text-xs {
+    margin-top: -6px;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  .dialog.none {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-1500px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-1500px);
+    }
+  }
+
+  @keyframes closeDialog {
+    0% {
+      display: block;
+    }
+    100% {
+      display: none;
+    }
+  }
+}
