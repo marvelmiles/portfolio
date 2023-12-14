@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+const isProdMode = process.env.NODE_ENV === "production";
+
 const nextConfig = {
+  basePath: isProdMode ? "/portfolio" : "",
   output: "export",
   distDir: "dist",
   images: {
