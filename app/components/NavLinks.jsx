@@ -6,6 +6,7 @@ import { IoIosGitNetwork } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { Fade } from "react-reveal";
 import Link from "next/link";
+import { isProdMode } from "../constants";
 
 const NavLinks = ({ className, itemClassName, width, onClick }) => {
   const [to, setTo] = useState("");
@@ -61,6 +62,7 @@ const NavLinks = ({ className, itemClassName, width, onClick }) => {
           >
             <Link
               href={`/#${u.href}`}
+              as={isProdMode ? `/portfolio#${u.href}` : "/#" + u.href}
               data-to={u.href}
               style={{ width: "100%", display: "inline-block" }}
               onClick={onClick}

@@ -8,3 +8,5 @@ export const mySocials = {
   github: "https://github.com/marvelmiles",
   twitter: "https://twitter.com/_Marvelmiles"
 };
+
+export const isProdMode = process.env.NODE_ENV === "production";
