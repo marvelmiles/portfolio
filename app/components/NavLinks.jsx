@@ -17,7 +17,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
   useEffect(() => {
     // const hash = window.location.hash;
 
-    router.replace(hash, { scroll: true });
+    // router.replace(hash, { scroll: true });
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
