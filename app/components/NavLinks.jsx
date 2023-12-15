@@ -15,7 +15,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
   const [to, setTo] = useState("");
 
   useEffect(() => {
-    const hash = window.location.hash;
+    // const hash = window.location.hash;
 
     router.replace(hash, { scroll: true });
 
@@ -49,7 +49,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [router]);
+  }, []);
 
   const handleRouting = e => {
     // handling routing bcos gh-pages don't pass client
@@ -82,7 +82,6 @@ const NavLinks = ({ className, itemClassName, width }) => {
               href={`/#${u.href}`}
               data-to={u.href}
               style={{ width: "100%", display: "inline-block" }}
-              onClick={handleRouting}
             >
               <div
                 className={`${to === `${u.href}` ? "bg-white-paper" : ""} ${
