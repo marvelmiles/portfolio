@@ -180,12 +180,12 @@ const Home = () => {
               <div className="mt-5">
                 <Fade bottom>
                   <p className="mb-5 text-white-primary">
-                    I am a passionate full-stack developer with a love for
-                    creating user-friendly applications. I thrive on the
-                    challenge of transforming ideas into software applications,
-                    and I am constantly seeking new ways to enhance my skills
-                    and knowledge in the ever-evolving world of web development
-                    and programming.
+                    Being me tells a story of a full-stack developer whose love
+                    for creating user-friendly applications thrives on
+                    transforming ideas into software applications. Marvellous
+                    constantly seeks new ways to enhance his skills and
+                    knowledge in the ever-evolving world of web development and
+                    programming.
                   </p>
                 </Fade>
                 <div className="text-green-primary">
@@ -195,9 +195,9 @@ const Home = () => {
                   <p className="text-white-primary">
                     I am a team player with a strong work ethic and a commitment
                     to excellence. I am always eager to collaborate with others,
-                    share knowledge, and tackle complex projects head-on. I am
-                    also a quick learner, constantly adapting to new
-                    technologies and methodologies to stay updated.
+                    share knowledge, and tackle complex projects head-on.
+                    Additionally, I am a quick learner, constantly adapting to
+                    new technologies and methodologies to stay updated.
                   </p>
                 </Fade>
 
@@ -206,12 +206,12 @@ const Home = () => {
                 </div>
                 <Fade bottom>
                   <p className="text-white-primary">
-                    i think success is all about aiming to achieve a goal and
-                    working hard to achieve it. Holistically achieving success
-                    can be overwhelming, causing fear and self doubt. A
-                    monolistic approach to success and celebration of the small
-                    wins make the big picture easier to achieve. Success for me
-                    is the small wins of my day to day activities.
+                    I believe success is all about setting and working hard to
+                    achieve goals. Holistically achieving success can be
+                    overwhelming, leading to fear and self-doubt. Taking a
+                    monolistic approach to success and celebrating small wins
+                    makes the big picture easier to achieve. For me, success is
+                    found in the small wins of my day-to-day activities.
                   </p>
                 </Fade>
               </div>
@@ -260,7 +260,7 @@ const Home = () => {
           <div className="text-white-light text-xs italic">
             Simple UI . Sleek Interface
           </div>
-          <Fade>
+          <Fade bottom>
             <div className="flex flex-wrap mt-4 gap-4 mx-auto">
               {projects.map((p, i) => (
                 <div
