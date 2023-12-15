@@ -80,6 +80,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
           >
             <Link
               href={`/#${u.href}`}
+              as={`/#${u.href}`}
               data-to={u.href}
               style={{ width: "100%", display: "inline-block" }}
             >
