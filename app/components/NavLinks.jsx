@@ -49,7 +49,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [router]);
 
   const handleRouting = e => {
     // handling routing bcos gh-pages don't pass client
