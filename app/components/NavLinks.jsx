@@ -73,7 +73,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
           href: "contact"
         }
       ].map((u, i) => (
-        <Link shallow onClick={handleRouting} href={`/#${u.href}`} key={i}>
+        <Link shallow replace href={`/#${u.href}`} key={i}>
           dd
         </Link>
         // <div key={i} style={{ width }}>

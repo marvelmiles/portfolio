@@ -21,6 +21,7 @@ const Sidebar = ({ className = "", closeDialog }) => {
         itemClassName="gap-2"
         width="100%"
         onClick={closeDialog}
+        key="sidebar"
       />
 
       <ResumeBtn
