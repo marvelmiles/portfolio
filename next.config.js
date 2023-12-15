@@ -3,8 +3,8 @@
 const isProdMode = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  basePath: isProdMode ? "/" : "",
-  assestPrefix: "./",
+  basePath: isProdMode ? "/portfolio" : "",
+  assestPrefix: "/portfolio/",
   output: "export",
   distDir: "dist",
   images: {
