@@ -55,29 +55,15 @@ const NavLinks = ({ className, itemClassName, width }) => {
           href: "contact"
         }
       ].map((u, i) => (
-        <div key={i} style={{ width }}>
-          <Fade
-            bottom
-            delay={0}
-            duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
-          >
-            <Link
-              href={`/#${u.href}`}
-              as={`/#${u.href}`}
-              data-to={u.href}
-              style={{ width: "100%", display: "inline-block" }}
-            >
-              <div
-                className={`${to === `${u.href}` ? "bg-white-paper" : ""} ${
-                  itemClassName ? "" : "gap-1"
-                } p-2 flex items-center text-white-primary rounded-3xl cursor-pointer hover:bg-white-paper ${itemClassName}`}
-              >
-                <u.icon className="text-mdl" />
-                <div className="font-bold">{u.title}</div>
-              </div>
-            </Link>
-          </Fade>
-        </div>
+        <Link
+          key={i}
+          href={`/#${u.href}`}
+          as={`/#${u.href}`}
+          data-to={u.href}
+          style={{ width: "100%", display: "inline-block", color: "#fff" }}
+        >
+          {u.title}
+        </Link>
       ))}
     </ul>
   );
@@ -86,3 +72,27 @@ const NavLinks = ({ className, itemClassName, width }) => {
 NavLinks.propTypes = {};
 
 export default NavLinks;
+
+// <div key={i} style={{ width }}>
+//   <Fade
+//     bottom
+//     delay={0}
+//     duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
+//   >
+//     <Link
+//       href={`/#${u.href}`}
+//       as={`/#${u.href}`}
+//       data-to={u.href}
+//       style={{ width: "100%", display: "inline-block" }}
+//     >
+//       <div
+//         className={`${to === `${u.href}` ? "bg-white-paper" : ""} ${
+//           itemClassName ? "" : "gap-1"
+//         } p-2 flex items-center text-white-primary rounded-3xl cursor-pointer hover:bg-white-paper ${itemClassName}`}
+//       >
+//         <u.icon className="text-mdl" />
+//         <div className="font-bold">{u.title}</div>
+//       </div>
+//     </Link>
+//   </Fade>
+// </div>
