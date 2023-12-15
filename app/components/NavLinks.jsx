@@ -1,8 +1,8 @@
-"use-client";
+// "use-client";
 
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { HiOutlineHome } from "react-icons/hi2";
 import { RxPerson } from "react-icons/rx";
 import { IoIosGitNetwork } from "react-icons/io";
@@ -11,7 +11,7 @@ import { Fade } from "react-reveal";
 import Link from "next/link";
 
 const NavLinks = ({ className, itemClassName, width }) => {
-  const router = useRouter();
+  // const router = useRouter();
   const [to, setTo] = useState("");
 
   useEffect(() => {
@@ -51,12 +51,12 @@ const NavLinks = ({ className, itemClassName, width }) => {
     };
   }, []);
 
-  const handleRouting = e => {
-    // handling routing bcos gh-pages don't pass client
-    // routing to next.js. Which makes the page to reload
-    const href = e.currentTarget.dataset.to;
-    router.replace(href, { scroll: true });
-  };
+  // const handleRouting = e => {
+  //   // handling routing bcos gh-pages don't pass client
+  //   // routing to next.js. Which makes the page to reload
+  //   const href = e.currentTarget.dataset.to;
+  //   router.replace(href, { scroll: true });
+  // };
 
   return (
     <ul className={`flex items-center gap-2 ${className}`}>
@@ -70,29 +70,32 @@ const NavLinks = ({ className, itemClassName, width }) => {
           href: "contact"
         }
       ].map((u, i) => (
-        <div key={i} style={{ width }}>
-          <Fade
-            bottom
-            delay={0}
-            duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
-          >
-            <span
-              onClick={handleRouting}
-              href={`/#${u.href}`}
-              data-to={`/#${u.href}`}
-              style={{ width: "100%", display: "inline-block" }}
-            >
-              <div
-                className={`${to === `${u.href}` ? "bg-white-paper" : ""} ${
-                  itemClassName ? "" : "gap-1"
-                } p-2 flex items-center text-white-primary rounded-3xl cursor-pointer hover:bg-white-paper ${itemClassName}`}
-              >
-                <u.icon className="text-mdl" />
-                <div className="font-bold">{u.title}</div>
-              </div>
-            </span>
-          </Fade>
-        </div>
+        <Link shallow href={`/${u.href}`}>
+          dd
+        </Link>
+        // <div key={i} style={{ width }}>
+        //   <Fade
+        //     bottom
+        //     delay={0}
+        //     duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
+        //   >
+        //     <span
+        //       // onClick={handleRouting}
+        //       href={`/#${u.href}`}
+        //       data-to={`/#${u.href}`}
+        //       style={{ width: "100%", display: "inline-block" }}
+        //     >
+        //       <div
+        //         className={`${to === `${u.href}` ? "bg-white-paper" : ""} ${
+        //           itemClassName ? "" : "gap-1"
+        //         } p-2 flex items-center text-white-primary rounded-3xl cursor-pointer hover:bg-white-paper ${itemClassName}`}
+        //       >
+        //         <u.icon className="text-mdl" />
+        //         <div className="font-bold">{u.title}</div>
+        //       </div>
+        //     </span>
+        //   </Fade>
+        // </div>
       ))}
     </ul>
   );
