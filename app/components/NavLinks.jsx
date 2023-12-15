@@ -54,8 +54,6 @@ const NavLinks = ({ className, itemClassName, width }) => {
   const handleRouting = e => {
     // handling routing bcos gh-pages don't pass client
     // routing to next.js. Which makes the page to reload
-
-    e.preventDefault();
     const href = e.currentTarget.dataset.to;
     router.replace(href, { scroll: true });
   };
