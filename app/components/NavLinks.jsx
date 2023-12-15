@@ -1,8 +1,5 @@
-"use-client";
-
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useRouter } from "next/navigation";
 import { HiOutlineHome } from "react-icons/hi2";
 import { RxPerson } from "react-icons/rx";
 import { IoIosGitNetwork } from "react-icons/io";
@@ -11,14 +8,9 @@ import { Fade } from "react-reveal";
 import Link from "next/link";
 
 const NavLinks = ({ className, itemClassName, width }) => {
-  const router = useRouter();
   const [to, setTo] = useState("");
 
   useEffect(() => {
-    // const hash = window.location.hash;
-
-    // router.replace(hash, { scroll: true });
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const ids = ["home", "bio", "projects", "contact"];
@@ -51,15 +43,6 @@ const NavLinks = ({ className, itemClassName, width }) => {
     };
   }, []);
 
-  const handleRouting = e => {
-    // handling routing bcos gh-pages don't pass client
-    // routing to next.js. Which makes the page to reload
-
-    e.preventDefault();
-    const href = e.currentTarget.href;
-    router.push(href, { scroll: true });
-  };
-
   return (
     <ul className={`flex items-center gap-2 ${className}`}>
       {[
@@ -79,8 +62,8 @@ const NavLinks = ({ className, itemClassName, width }) => {
             duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
           >
             <Link
-              onClick={handleRouting}
               href={`/#${u.href}`}
+              as={`/#${u.href}`}
               data-to={u.href}
               style={{ width: "100%", display: "inline-block" }}
             >
