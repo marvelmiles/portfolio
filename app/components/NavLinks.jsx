@@ -57,8 +57,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
 
     e.preventDefault();
     const href = e.currentTarget.dataset.to;
-    console.log(href);
-    router.push(href, { scroll: true });
+    router.replace(href, { scroll: true });
   };
 
   return (
