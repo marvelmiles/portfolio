@@ -79,8 +79,8 @@ const NavLinks = ({ className, itemClassName, width }) => {
             duration={{ 0: 200, 1: 400, 2: 600, 3: 800, 4: 1000 }[i]}
           >
             <Link
+              onClick={handleRouting}
               href={`/#${u.href}`}
-              as={`/#${u.href}`}
               data-to={u.href}
               style={{ width: "100%", display: "inline-block" }}
             >
