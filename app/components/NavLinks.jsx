@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useRouter } from "next/navigation";
 import { HiOutlineHome } from "react-icons/hi2";
 import { RxPerson } from "react-icons/rx";
 import { IoIosGitNetwork } from "react-icons/io";
@@ -11,7 +10,6 @@ import { Fade } from "react-reveal";
 import Link from "next/link";
 
 const NavLinks = ({ className, itemClassName, width }) => {
-  const router = useRouter();
   const [to, setTo] = useState("");
 
   useEffect(() => {
@@ -51,12 +49,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
     };
   }, []);
 
-  const handleRouting = e => {
-    // handling routing bcos gh-pages don't pass client
-    // routing to next.js. Which makes the page to reload
-    const href = e.currentTarget.dataset.to;
-    router.replace(href, { scroll: true, shallow: true });
-  };
+  // ffefa7e0391e360aeae8e20c0d5baa204d53b10a;
 
   return (
     <ul className={`flex items-center gap-2 ${className}`}>
@@ -70,7 +63,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
           href: "contact"
         }
       ].map((u, i) => (
-        <Link shallow onClick={handleRouting} href={`/#${u.href}`} key={i}>
+        <Link shallow href={`/#${u.href}`} key={i}>
           dd
         </Link>
         // <div key={i} style={{ width }}>
