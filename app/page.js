@@ -246,6 +246,7 @@ const Home = () => {
                     "Redux",
                     "Graphql",
                     "Firebase",
+                    "Nextjs",
                     "Nodejs",
                     "MongoDB"
                   ]}
