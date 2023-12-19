@@ -320,7 +320,7 @@ const Home = () => {
                           <a
                             key={i}
                             href={b.href}
-                            className="w-8 h-8 flex items-center justify-center  rounded-full border-solid border-2 border-white-divider"
+                            className="w-8 h-8 flex items-center justify-center  rounded-full border-solid border-2 border-white-divider hover:border-white-light"
                             {...anchorAttrs}
                           >
                             <b.icon />

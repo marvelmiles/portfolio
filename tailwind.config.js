@@ -25,8 +25,8 @@ module.exports = {
       },
       white: {
         primary: "#fff",
-        light: "rgba(255,255,255,0.5)",
-        milk: "rgba(255,255,255,0.8)",
+        light: "rgba(255,255,255,.8)",
+        milk: "rgba(255,255,255,.8)",
         divider: "rgba(255, 255, 255, 0.2)",
         paper: "rgba(255, 255, 255, 0.1)"
       }
