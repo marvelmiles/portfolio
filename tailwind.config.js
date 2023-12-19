@@ -41,6 +41,7 @@ module.exports = {
         col3: "31.8%",
         col2: "48.4%",
         "300": "300px",
+        110: "110px",
         auto: "auto"
       },
       scale: {

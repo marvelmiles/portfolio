@@ -6,8 +6,9 @@ const ResumeBtn = ({ className, ...props }) => {
   return (
     <Fade bottom {...props}>
       <a
-        href="#"
-        className={`block p-2 text-center rounded-3xl border-solid border-2 border-green-primary text-green-primary hover:bg-green-primary hover:text-white-primary active:bg-transparent ${className}`}
+        download
+        href="/docs/resume.pdf"
+        className={`block w-110 p-2 text-center rounded-3xl border-solid border-2 border-green-primary text-green-primary hover:bg-green-primary hover:text-white-primary active:bg-transparent ${className}`}
       >
         Resume
       </a>

@@ -4,23 +4,9 @@ import React from "react";
 import codingWithCoffie from "public/codingWithCoffie.json";
 import Lottie from "lottie-react";
 import MainLayout from "app/AppLayout/MainLayout";
-import html5Icon from "public/images/html5Icon.png";
-import css3Icon from "public/images/css3Icon.png";
-import sassIcon from "public/images/sassIcon.png";
-import jsIcon from "public/images/jsIcon.png";
-import reactIcon from "public/images/reactIcon.png";
-import nodejsIcon from "public/images/nodejsIcon.png";
 import Image from "next/image";
-import soshareImage from "public/images/soshare.png";
-import reactAdminPanelImage from "public/images/react-admin-panel.png";
-import ipExplorerImage from "public/images/ip-explorer.png";
-import nigeriaHistoryImage from "public/images/nigeria-history.png";
-import adventImage from "public/images/advent.png";
-import rcmtImage from "public/images/rcmt.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
-import { CiMail } from "react-icons/ci";
 import { Fade } from "react-reveal";
 import ResumeBtn from "./components/ResumeBtn";
 import Chips from "./components/Chips";
@@ -30,7 +16,7 @@ import Socials from "./components/Socials";
 const Home = () => {
   const projects = [
     {
-      img: soshareImage,
+      img: "/images/soshare.png",
       title: "Soshare",
       desc:
         "Mini social platform for sharing videos and posts within a vibrant community.",
@@ -47,7 +33,7 @@ const Home = () => {
       ]
     },
     {
-      img: reactAdminPanelImage,
+      img: "/images/react-admin-panel.png",
       title: "React Admin",
       desc:
         "Product-oriented admin panel for managing products and users. Frontend-focused, powered by Firebase.",
@@ -62,7 +48,7 @@ const Home = () => {
       ]
     },
     {
-      img: ipExplorerImage,
+      img: "/images/ip-explorer.png",
       title: "IP Explorer",
       desc:
         "Lightweight website for retrieving IPv4/IPv6 address details, including a built-in theme picker.",
@@ -71,7 +57,7 @@ const Home = () => {
       tech: ["React", "Styled-components", "React-popper"]
     },
     {
-      img: nigeriaHistoryImage,
+      img: "/images/nigeria-history.png",
       title: "Nigeria History",
       desc:
         "Command-line quiz built with Node.js, featuring a mix of colors for an engaging user experience",
@@ -86,7 +72,7 @@ const Home = () => {
       ]
     },
     {
-      img: adventImage,
+      img: "/images/advent.png",
       title: "Advnt.",
       desc: "Lightweight website to review a product.",
       href: "https://marvelmiles.github.io/advent",
@@ -94,7 +80,7 @@ const Home = () => {
       tech: ["React", "Scroll-reveal", "Bootstrap", "Reactstrap"]
     },
     {
-      img: rcmtImage,
+      img: "/images/rcmt.png",
       title: "Cloud Management LP",
       desc: "Simple saas cloud management platform.",
       href: "https://marvelmiles.github.io/cloud-management-react-tailwind",
@@ -150,21 +136,19 @@ const Home = () => {
             <Fade left>
               <div className="flex flex-wrap justify-around items-center lg:ml-5 gap-4">
                 {[
-                  { img: html5Icon },
-                  { img: css3Icon },
-                  { img: sassIcon },
-                  { img: jsIcon },
-                  { img: reactIcon },
-                  { img: nodejsIcon }
+                  { img: "/images/html5Icon.png" },
+                  { img: "/images/css3Icon.png" },
+                  { img: "/images/sassIcon.png" },
+                  { img: "/images/jsIcon.png" },
+                  { img: "/images/reactIcon.png" },
+                  { img: "/images/nodejsIcon.png" }
                 ].map((t, i) => (
                   <Image
                     alt={"brand-icon"}
                     src={t.img}
                     key={i}
-                    style={{
-                      width: "45px",
-                      height: "45px"
-                    }}
+                    width={45}
+                    height={45}
                   />
                 ))}
               </div>
@@ -261,7 +245,7 @@ const Home = () => {
           <div className="text-white-light text-xs italic">
             Simple UI . Sleek Interface
           </div>
-          <Fade bottom>
+          <Fade delay={0} duration={500} bottom>
             <div className="flex flex-wrap mt-4 gap-4 mx-auto">
               {projects.map((p, i) => (
                 <div
@@ -269,7 +253,17 @@ const Home = () => {
                   className="w-full flex flex-col sm:w-col2 md:w-col3 rounded-sm border-solid border border-white-divider hover:scale-101 hover:rotate-1 transition-all"
                 >
                   <div>
-                    <Image alt="Project image" src={p.img} />
+                    <Image
+                      alt={`${p.title} image`}
+                      src={p.img}
+                      width={300}
+                      height={100}
+                      style={{
+                        maxHeight: "140px",
+                        minHeight: "auto",
+                        minWidth: "100%"
+                      }}
+                    />
                   </div>
                   <div className="p-2 flex-1 flex flex-col">
                     <div>
