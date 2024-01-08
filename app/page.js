@@ -18,8 +18,7 @@ const Home = () => {
     {
       img: "/images/soshare.png",
       title: "Soshare",
-      desc:
-        "Mini social platform for sharing videos and posts within a vibrant community.",
+      desc: "Mini social platform for sharing videos and posts within a vibrant community.",
       href: "https://soshare.onrender.com",
       github: "https://github.com/marvelmiles/soshare",
       tech: [
@@ -29,14 +28,13 @@ const Home = () => {
         "JWT",
         "React",
         "Axios",
-        "React-multi-carousel"
-      ]
+        "React-multi-carousel",
+      ],
     },
     {
       img: "/images/react-admin-panel.png",
       title: "React Admin",
-      desc:
-        "Product-oriented admin panel for managing products and users. Frontend-focused, powered by Firebase.",
+      desc: "Product-oriented admin panel for managing products and users. Frontend-focused, powered by Firebase.",
       href: "https://cozy-granita-a65274.netlify.app/",
       github: "https://github.com/marvelmiles/react-admin-panel",
       tech: [
@@ -44,23 +42,21 @@ const Home = () => {
         "React",
         "Recharts",
         "React-circular-progressbar",
-        "Moment"
-      ]
+        "Moment",
+      ],
     },
     {
       img: "/images/ip-explorer.png",
       title: "IP Explorer",
-      desc:
-        "Lightweight website for retrieving IPv4/IPv6 address details, including a built-in theme picker.",
+      desc: "Lightweight website for retrieving IPv4/IPv6 address details, including a built-in theme picker.",
       href: "https://merry-conkies-96fe95.netlify.app/",
       github: "https://github.com/marvelmiles/ip-explorer",
-      tech: ["React", "Styled-components", "React-popper"]
+      tech: ["React", "Styled-components", "React-popper"],
     },
     {
       img: "/images/nigeria-history.png",
       title: "Nigeria History",
-      desc:
-        "Command-line quiz built with Node.js, featuring a mix of colors for an engaging user experience",
+      desc: "Command-line quiz built with Node.js, featuring a mix of colors for an engaging user experience",
       github: "https://github.com/marvelmiles/nigeria-history",
       tech: [
         "Chalk",
@@ -68,8 +64,8 @@ const Home = () => {
         "Nanospinner",
         "Figlet",
         "Gradient-string",
-        "Inquirer"
-      ]
+        "Inquirer",
+      ],
     },
     {
       img: "/images/advent.png",
@@ -77,7 +73,7 @@ const Home = () => {
       desc: "Lightweight website to review a product.",
       href: "https://marvelmiles.github.io/advent",
       github: "https://github.com/marvelmiles/advent",
-      tech: ["React", "Scroll-reveal", "Bootstrap", "Reactstrap"]
+      tech: ["React", "Scroll-reveal", "Bootstrap", "Reactstrap"],
     },
     {
       img: "/images/rcmt.png",
@@ -85,8 +81,8 @@ const Home = () => {
       desc: "Simple saas cloud management platform.",
       href: "https://marvelmiles.github.io/cloud-management-react-tailwind",
       github: "https://github.com/marvelmiles/cloud-management-react-tailwind",
-      tech: ["React", "Tailwind", "React-scroll", "React-icons"]
-    }
+      tech: ["React", "Tailwind", "React-scroll", "React-icons"],
+    },
   ];
 
   return (
@@ -141,7 +137,7 @@ const Home = () => {
                   { img: "/images/sassIcon.png" },
                   { img: "/images/jsIcon.png" },
                   { img: "/images/reactIcon.png" },
-                  { img: "/images/nodejsIcon.png" }
+                  { img: "/images/nodejsIcon.png" },
                 ].map((t, i) => (
                   <Image
                     alt={"brand-icon"}
@@ -215,7 +211,7 @@ const Home = () => {
                     "Confidence",
                     "Team-Building",
                     "Creativity",
-                    "Communication"
+                    "Communication",
                   ]}
                 />
               </Fade>
@@ -232,7 +228,7 @@ const Home = () => {
                     "Firebase",
                     "Nextjs",
                     "Nodejs",
-                    "MongoDB"
+                    "MongoDB",
                   ]}
                 />
               </Fade>
@@ -261,7 +257,7 @@ const Home = () => {
                       style={{
                         maxHeight: "140px",
                         minHeight: "auto",
-                        minWidth: "100%"
+                        minWidth: "100%",
                       }}
                     />
                   </div>
@@ -278,7 +274,7 @@ const Home = () => {
                           <span
                             data-open={false}
                             className="underline cursor-pointer"
-                            onClick={e => {
+                            onClick={(e) => {
                               const n = e.currentTarget;
                               const open = n.dataset.open === "true";
 
@@ -304,12 +300,12 @@ const Home = () => {
                         {
                           icon: FaExternalLinkAlt,
                           href: p.href,
-                          nullify: !p.href
+                          nullify: !p.href,
                         },
                         {
                           icon: FiGithub,
-                          href: p.github
-                        }
+                          href: p.github,
+                        },
                       ].map((b, i) =>
                         b.nullify ? null : (
                           <a
@@ -340,8 +336,9 @@ const Home = () => {
             className="mt-4"
             titles={[
               "marvellousabidemi2@gmail.com",
-              "@_Marvelmiles",
-              "@_marvelMiles"
+              "marvelmiles",
+              "_marvelMiles",
+              "Marvellous AKinrinmola",
             ]}
           />
         </section>
