@@ -34,7 +34,7 @@ const MainLayout = ({ children }) => {
                 style={{ width: "45px", height: "45px" }}
               /> */}
             </div>
-            <Socials className="hidden s320:flex" />
+            <Socials className="hidden s360:flex" />
           </div>
         </div>
         <div className="flex gap-2 items-center">

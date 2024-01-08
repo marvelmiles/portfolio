@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { CiMail } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import { Fade } from "react-reveal";
 import { anchorAttrs, mySocials } from "../constants";
 
@@ -12,16 +13,20 @@ const Socials = ({ className, titles = [], ...props }) => {
       {[
         {
           icon: CiMail,
-          href: mySocials.email
+          href: mySocials.email,
         },
         {
           icon: FiGithub,
-          href: mySocials.github
+          href: mySocials.github,
         },
         {
           icon: FaXTwitter,
-          href: mySocials.twitter
-        }
+          href: mySocials.twitter,
+        },
+        {
+          icon: FaLinkedinIn,
+          href: mySocials.linkedIn,
+        },
       ].map((s, i) => {
         const title = s.title || titles[i];
 
@@ -32,7 +37,7 @@ const Socials = ({ className, titles = [], ...props }) => {
                 className="bg-white-divider hover:bg-white-paper break-words text-white-primary rounded-3xl p-2 flex items-center gap-2"
                 style={{
                   maxWidth: "100%",
-                  wordBreak: "break-word"
+                  wordBreak: "break-word",
                 }}
               >
                 <div>{<s.icon />}</div>
