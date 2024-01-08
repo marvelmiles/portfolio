@@ -338,7 +338,7 @@ const Home = () => {
               "marvellousabidemi2@gmail.com",
               "marvelmiles",
               "_marvelMiles",
-              "Marvellous AKinrinmola",
+              "Marvellous Akinrinmola",
             ]}
           />
         </section>
