@@ -229,6 +229,8 @@ const Home = () => {
                     "Nextjs",
                     "Nodejs",
                     "MongoDB",
+                    "Agile Development",
+                    "Dev-Ops",
                   ]}
                 />
               </Fade>
