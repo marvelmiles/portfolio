@@ -23,10 +23,10 @@ const Socials = ({ className, titles = [], ...props }) => {
           icon: FaXTwitter,
           href: mySocials.twitter,
         },
-        {
-          icon: FaLinkedinIn,
-          href: mySocials.linkedIn,
-        },
+        // {
+        //   icon: FaLinkedinIn,
+        //   href: mySocials.linkedIn,
+        // },
       ].map((s, i) => {
         const title = s.title || titles[i];
 
