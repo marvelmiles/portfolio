@@ -9,7 +9,7 @@ This project serves as a digital canvas, showcasing my skills, projects, and fun
 - React-reveal
 - TailwindCss
 
-### GETTING STARTED - COMMANDS
+### Getting started - Commands
 
 Starting Development:
 - npm install
