@@ -1,8 +1,7 @@
 export const anchorAttrs = {
   target: "_blank",
-  rel: "noopener noreferrer"
+  rel: "noopener noreferrer",
 };
-
 
 export const mySocials = {
   email: "marvellousabidemi2@gmail.com",
