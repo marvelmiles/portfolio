@@ -3,6 +3,7 @@ export const anchorAttrs = {
   rel: "noopener noreferrer"
 };
 
+
 export const mySocials = {
   email: "marvellousabidemi2@gmail.com",
   github: "https://github.com/marvelmiles",
