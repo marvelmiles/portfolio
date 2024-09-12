@@ -12,6 +12,7 @@ import ResumeBtn from "./components/ResumeBtn";
 import Chips from "./components/Chips";
 import { anchorAttrs } from "./constants";
 import Socials from "./components/Socials";
+import Stats from "./components/Stats";
 
 const Home = () => {
   const projects = [
@@ -124,33 +125,7 @@ const Home = () => {
 
           <ResumeBtn className="w-full mt-2 s200:hidden" />
 
-          <div className="flex flex-col justify-center items-center md:justify-normal md:flex-row gap-4 w-full mt-10">
-            <Fade left>
-              <div className="text-green-primary text-md font-bold mb-4 md:mb-0">
-                Tech Stack <span className="hidden md:inline-block">|</span>{" "}
-              </div>
-            </Fade>
-            <Fade left>
-              <div className="flex flex-wrap justify-around items-center lg:ml-5 gap-4">
-                {[
-                  { img: "/images/html5Icon.png" },
-                  { img: "/images/css3Icon.png" },
-                  { img: "/images/sassIcon.png" },
-                  { img: "/images/jsIcon.png" },
-                  { img: "/images/reactIcon.png" },
-                  { img: "/images/nodejsIcon.png" },
-                ].map((t, i) => (
-                  <Image
-                    alt={"brand-icon"}
-                    src={t.img}
-                    key={i}
-                    width={45}
-                    height={45}
-                  />
-                ))}
-              </div>
-            </Fade>
-          </div>
+          <Stats />
         </section>
 
         <section id="bio" className="mt-20">
