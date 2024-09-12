@@ -12,8 +12,7 @@
 }
 
 @layer utilities {
-  .paper {
-    border: 1px solid red;
+  :where(.paper) {
     border-radius: 4px;
     padding: 16px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -42,6 +41,11 @@
   .dialog.none {
     visibility: hidden;
     pointer-events: none;
+  }
+
+  .text-ellipsis {
+    @apply whitespace-nowrap overflow-hidden;
+    text-overflow: ellipsis;
   }
 
   @keyframes slideIn {

@@ -16,10 +16,14 @@ module.exports = {
     },
 
     colors: {
+      transparent: {
+        DEFAULT: "transparent",
+      },
       dark: {
         primary: "#000",
         light: "#333",
         dialog: "rgba(0,0,0,.75)",
+        chip: "rgba(255, 255, 255)",
       },
       green: {
         primary: "#28a745",
