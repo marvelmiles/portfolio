@@ -107,8 +107,9 @@ const Home = () => {
               </Fade>
               <Fade delay={0} bottom>
                 <div className="text-white-primary italic font-bold max-w-xl my-2">
-                  Full-stack developer who loves working with web technologies,
-                  I enjoy turning code into things people can use.
+                  Highly motivated, versatile and results-oriented Full Stack
+                  Software Engineer with 4+ years of experience building
+                  innovative and user-friendly applications.
                 </div>
               </Fade>
             </div>
@@ -223,14 +224,18 @@ const Home = () => {
                   chips={[
                     "Javascript",
                     "React",
-                    "Redux",
+                    "Dev-Ops",
                     "Graphql",
-                    "Firebase",
+                    "SQL",
                     "Nextjs",
                     "Nodejs",
                     "MongoDB",
+                    "Firebase",
+                    "Typescript",
+                    "PostgreSQL",
+                    "Python",
+                    "Solidity",
                     "Agile Development",
-                    "Dev-Ops",
                   ]}
                 />
               </Fade>
@@ -243,6 +248,7 @@ const Home = () => {
           <div className="text-white-light text-xs italic">
             Simple UI . Sleek Interface
           </div>
+          {/* <Chips mini className="mt-2" chips={["Web App", "Mobile App"]} /> */}
           <Fade delay={0} duration={500} bottom>
             <div className="flex flex-wrap mt-4 gap-4 mx-auto">
               {projects.map((p, i) => (
