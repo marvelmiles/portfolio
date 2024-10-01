@@ -1,7 +1,7 @@
 import React from "react";
 
 const WhyMe = () => {
-  return <div>WhyMe</div>;
+  return <div>WhyjMe</div>;
 };
 
 export default WhyMe;
