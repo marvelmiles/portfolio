@@ -8,6 +8,7 @@ import { anchorAttrs } from "../constants";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { motion } from "framer-motion";
+import Typography from "./Typography";
 
 const Works = () => {
   const [activeWork, setActiveWork] = useState("Web App");
@@ -100,10 +101,8 @@ const Works = () => {
 
   return (
     <section id="projects" className="mt-20">
-      <h4 className="text-mdl font-bold text-green-primary">My Work</h4>
-      <div className="text-white-light text-xs italic">
-        Simple UI . Sleek Interface
-      </div>
+      <Typography variant="title">My Work</Typography>
+      <Typography variant="subTitle">Simple UI . Sleek Interface</Typography>
       <Fade bottom>
         <Chips
           mini
@@ -117,7 +116,6 @@ const Works = () => {
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, delayChildren: 0.5 }}
-          className="app__work-portfolio"
         >
           <div className="flex flex-wrap mt-4 gap-4 mx-auto">
             {projects[activeWork].map((p, i) => (

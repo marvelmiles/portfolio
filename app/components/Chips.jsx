@@ -13,7 +13,7 @@ const Chips = ({
       {chips.map((u) => (
         <div
           key={u}
-          onClick={() => onSelect(u)}
+          onClick={onSelect ? () => onSelect(u) : undefined}
           className={`paper ${mini ? "mini" : ""} ${
             onSelect
               ? `

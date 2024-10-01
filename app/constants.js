@@ -11,3 +11,7 @@ export const mySocials = {
 };
 
 export const isProdMode = process.env.NODE_ENV === "production";
+
+export const SERVER_ORIGIN = isProdMode
+  ? "https:portfolio-marvelmiles.vercel.app/api"
+  : "http://localhost:3000/api";
