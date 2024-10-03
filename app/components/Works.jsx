@@ -7,12 +7,17 @@ import Image from "next/image";
 import { anchorAttrs } from "../constants";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import { motion } from "framer-motion";
 import Typography from "./Typography";
+import TabsY from "./TabsY";
+import Button from "./Button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { handleScrollTo } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Works = () => {
-  const [activeWork, setActiveWork] = useState("Web App");
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [tabsApi, setTabsApi] = useState(null);
+
+  const [page, setPage] = useState(0);
 
   const projects = {
     "Web App": [
@@ -22,15 +27,7 @@ const Works = () => {
         desc: "Mini social platform for sharing videos and posts within a vibrant community.",
         href: "https://soshare.onrender.com",
         github: "https://github.com/marvelmiles/soshare",
-        tech: [
-          "Firebase",
-          "Get-video-duration",
-          "Socket.io",
-          "JWT",
-          "React",
-          "Axios",
-          "React-multi-carousel",
-        ],
+        tech: ["Firebase", "Socket.io", "JWT", "Axios", "React-multi-carousel"],
       },
       {
         img: "/images/react-admin-panel.png",
@@ -38,13 +35,7 @@ const Works = () => {
         desc: "Product-oriented admin panel for managing products and users. Frontend-focused, powered by Firebase.",
         href: "https://cozy-granita-a65274.netlify.app/",
         github: "https://github.com/marvelmiles/react-admin-panel",
-        tech: [
-          "Firebase",
-          "React",
-          "Recharts",
-          "React-circular-progressbar",
-          "Moment",
-        ],
+        tech: ["Firebase", "Moment", "Recharts"],
       },
       {
         img: "/images/ip-explorer.png",
@@ -54,8 +45,6 @@ const Works = () => {
         github: "https://github.com/marvelmiles/ip-explorer",
         tech: ["React", "Styled-components", "React-popper"],
       },
-    ],
-    "Mobile App": [
       {
         img: "/images/nigeria-history.png",
         title: "Nigeria History",
@@ -90,120 +79,181 @@ const Works = () => {
     ],
   };
 
-  const handleWorkFilter = (work) => {
-    setActiveWork(work);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
-
-    setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
-    }, 500);
-  };
+  const handlePageChange = (page) =>
+    tabsApi.handleTransition(() => {
+      setPage(page);
+      const id = setTimeout(() => {
+        handleScrollTo("projects");
+        clearTimeout(id);
+      }, 200);
+    }, "vertical");
 
   return (
-    <section id="projects" className="mt-20">
+    <section id="projects" className="mt-20 mdl:overflow-visible">
       <Typography variant="title">My Work</Typography>
       <Typography variant="subTitle">Simple UI . Sleek Interface</Typography>
       <Fade bottom>
-        <Chips
-          mini
-          className="mt-2"
-          chips={["Web App", "Mobile App"]}
-          activeChip={activeWork}
-          onSelect={handleWorkFilter}
-        />
-      </Fade>
-      <Fade bottom>
-        <motion.div
-          animate={animateCard}
-          transition={{ duration: 0.5, delayChildren: 0.5 }}
-        >
-          <div className="flex flex-wrap mt-4 gap-4 mx-auto">
-            {projects[activeWork].map((p, i) => (
-              <div
-                key={i}
-                className="w-full flex flex-col sm:w-col2 md:w-col3 rounded-sm border-solid border border-white-divider hover:scale-101 hover:rotate-1 transition-all"
-              >
-                <div>
-                  <Image
-                    alt={`${p.title} image`}
-                    src={p.img}
-                    width={300}
-                    height={100}
-                    style={{
-                      maxHeight: "140px",
-                      minHeight: "auto",
-                      minWidth: "100%",
-                    }}
-                  />
-                </div>
-                <div className="p-2 flex-1 flex flex-col">
-                  <div>
-                    <div className="flex gap-2 items-start justify-between">
-                      <h4 className="text-md font-bold text-white-milk break-all">
-                        {p.title}
-                      </h4>
-                      <div
-                        className="
-                      flex flex-wrap sm:flex-nowrap flex-1 justify-end
-                      items-end gap-2 text-white-primary
+        <div>
+          <TabsY
+            setTabsApi={setTabsApi}
+            transition="fade"
+            defaultTab="Web App"
+            // tabs={["Web App", "Mobile App"]}
+
+            renderTab={({ activeTab }) => {
+              const skip = page * 4;
+
+              return (
+                <div
+                  className="
+                flex flex-col gap-4 lg:min-h-[395px]
+                "
+                >
+                  {
+                    {
+                      "Web App": (
+                        <div
+                          className="
+                      grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+                      gap-6
                       "
-                      >
-                        {[
-                          {
-                            icon: FaExternalLinkAlt,
-                            href: p.href,
-                            nullify: !p.href,
-                          },
-                          {
-                            icon: FiGithub,
-                            href: p.github,
-                          },
-                        ].map((b, i) =>
-                          b.nullify ? null : (
-                            <a
-                              key={i}
-                              href={b.href}
-                              className="w-8 h-8 flex items-center justify-center  rounded-full border-solid border-2 border-white-divider hover:border-white-light"
-                              {...anchorAttrs}
-                            >
-                              <b.icon />
-                            </a>
-                          )
-                        )}
-                      </div>
-                    </div>
-                    <p className="my-3 text-white-primary">
-                      {p.desc}
-
-                      <span style={{ display: "none" }}>{p.moreDesc}</span>
-                      {p.moreDesc > 74 ? (
-                        <span
-                          data-open={false}
-                          className="underline cursor-pointer"
-                          onClick={(e) => {
-                            const n = e.currentTarget;
-                            const open = n.dataset.open === "true";
-
-                            n.textContent = open ? " read more" : " read less";
-                            n.dataset.open = !open;
-                            n.previousElementSibling.style.display = open
-                              ? "none"
-                              : "inline";
-                          }}
                         >
-                          {" "}
-                          read more
-                        </span>
-                      ) : null}
-                    </p>
+                          {projects[activeTab]
+                            .slice(skip, skip + 3)
+                            .map((p, i) => (
+                              <motion.div
+                                key={i}
+                                whileHover={{
+                                  rotate: "1deg",
+                                  scale: 1.01,
+                                }}
+                                transition={{
+                                  ease: "easeInOut",
+                                }}
+                                className="
+                              w-full flex flex-col rounded-sm border-solid 
+                              border border-white-divider max-h-[394px] 
+                              overflow-hidden
+                              "
+                              >
+                                <div>
+                                  <Image
+                                    alt={`${p.title} image`}
+                                    src={p.img}
+                                    width={300}
+                                    height={100}
+                                    style={{
+                                      maxHeight: "140px",
+                                      minHeight: "auto",
+                                      minWidth: "100%",
+                                    }}
+                                  />
+                                </div>
+                                <div className="p-2 flex-1 flex flex-col">
+                                  <div>
+                                    <div className="flex gap-2 items-start justify-between">
+                                      <h4 className="text-md font-bold text-white-milk break-all">
+                                        {p.title}
+                                      </h4>
+                                      <div
+                                        className="
+          flex flex-wrap sm:flex-nowrap flex-1 justify-end
+          items-end gap-2 text-white-primary
+          "
+                                      >
+                                        {[
+                                          {
+                                            icon: FaExternalLinkAlt,
+                                            href: p.href,
+                                            nullify: !p.href,
+                                          },
+                                          {
+                                            icon: FiGithub,
+                                            href: p.github,
+                                          },
+                                        ].map((b, i) =>
+                                          b.nullify ? null : (
+                                            <a
+                                              key={i}
+                                              href={b.href}
+                                              className="w-8 h-8 flex items-center justify-center  rounded-full border-solid border-2 border-white-divider hover:border-white-light"
+                                              {...anchorAttrs}
+                                            >
+                                              <b.icon />
+                                            </a>
+                                          )
+                                        )}
+                                      </div>
+                                    </div>
+                                    <p className="my-3 text-white-primary">
+                                      {p.desc}
 
-                    <Chips mini className="mb-2" chips={p.tech} />
-                  </div>
+                                      <span style={{ display: "none" }}>
+                                        {p.moreDesc}
+                                      </span>
+                                      {p.moreDesc > 74 ? (
+                                        <span
+                                          data-open={false}
+                                          className="underline cursor-pointer"
+                                          onClick={(e) => {
+                                            const n = e.currentTarget;
+                                            const open =
+                                              n.dataset.open === "true";
+
+                                            n.textContent = open
+                                              ? " read more"
+                                              : " read less";
+                                            n.dataset.open = !open;
+                                            n.previousElementSibling.style.display =
+                                              open ? "none" : "inline";
+                                          }}
+                                        >
+                                          {" "}
+                                          read more
+                                        </span>
+                                      ) : null}
+                                    </p>
+
+                                    <Chips
+                                      mini
+                                      className="mb-2"
+                                      chips={p.tech}
+                                    />
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                        </div>
+                      ),
+                    }[activeTab]
+                  }
                 </div>
-              </div>
-            ))}
+              );
+            }}
+          />
+
+          <div className="w-full flex-center mt-8">
+            <Button
+              size="mini"
+              disabled={!(page > 0)}
+              onClick={() => handlePageChange(page - 1)}
+              className="text-white-primary"
+            >
+              <ChevronLeft />
+            </Button>{" "}
+            <Button
+              size="mini"
+              disabled={
+                !tabsApi ||
+                !(page < Math.floor(projects[tabsApi.activeTab].length / 4))
+              }
+              onClick={() => handlePageChange(page + 1)}
+              className="text-white-primary"
+            >
+              <ChevronRight />
+            </Button>
           </div>
-        </motion.div>
+        </div>
       </Fade>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { cn } from "@/lib/utils";
 
 const Chips = ({
   chips = [],
@@ -7,6 +8,7 @@ const Chips = ({
   className = "",
   onSelect,
   activeChip = "",
+  chipClassName = "",
 }) => {
   return (
     <div className={`flex flex-wrap gap-4 ${className}`}>
@@ -14,16 +16,16 @@ const Chips = ({
         <div
           key={u}
           onClick={onSelect ? () => onSelect(u) : undefined}
-          className={`paper ${mini ? "mini" : ""} ${
+          className={cn(
+            `paper transition-colors ${mini ? "mini" : ""}`,
             onSelect
               ? `
-            cursor-pointer
-            ${
-              activeChip === u ? "" : "bg-transparent hover:bg-white-primary/10"
-            }
-            `
-              : ""
-          }`}
+        cursor-pointer hover:bg-green-primary
+        ${activeChip === u ? "!bg-green-primary" : ""}
+        `
+              : "",
+            chipClassName
+          )}
         >
           {u}
         </div>

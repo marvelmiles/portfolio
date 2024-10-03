@@ -8,9 +8,7 @@ import { Fade } from "react-reveal";
 import ResumeBtn from "./components/ResumeBtn";
 import Stats from "./components/Stats";
 import Works from "./components/Works";
-import SkillsAndExpo from "./components/SkillsAndExpo";
 import ContactMe from "./components/ContactMe";
-import Bio from "./components/Bio";
 import WhyMe from "./components/WhyMe";
 
 const Home = () => {
@@ -57,9 +55,6 @@ const Home = () => {
         </section>
 
         <WhyMe />
-
-        <Bio />
-        <SkillsAndExpo />
         <Works />
         <ContactMe />
       </div>

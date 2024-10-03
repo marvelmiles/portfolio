@@ -13,7 +13,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const ids = ["home", "bio", "projects", "contact"];
+      const ids = ["home", "whyMe", "projects", "contact"];
 
       const doc = document.documentElement;
 
@@ -22,7 +22,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
       if (doc.scrollTop + doc.clientHeight === doc.scrollHeight)
         to = ids[ids.length - 1];
       else {
-        to = ids.filter(section => {
+        to = ids.filter((section) => {
           const sectionElement = document.getElementById(section);
           const sectionTop = sectionElement.offsetTop;
           const sectionBottom = sectionTop + sectionElement.offsetHeight;
@@ -47,13 +47,13 @@ const NavLinks = ({ className, itemClassName, width }) => {
     <ul className={`flex items-center gap-2 ${className}`}>
       {[
         { icon: HiOutlineHome, title: "Home", href: "home" },
-        { icon: RxPerson, title: "Bio", href: "bio" },
+        { icon: RxPerson, title: "Why Me", href: "whyMe" },
         { icon: IoIosGitNetwork, title: "My Work", href: "projects" },
         {
           icon: CiMail,
           title: "Contact",
-          href: "contact"
-        }
+          href: "contact",
+        },
       ].map((u, i) => (
         <div key={i} style={{ width }}>
           <Fade

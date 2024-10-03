@@ -19,8 +19,13 @@ const MainLayout = ({ children }) => {
   const closeDialog = useCallback(() => setOpenDialog(false), []);
 
   return (
-    <div>
-      <navbar className="flex p-2 items-center justify-between w-full fixed bg-dark-primary z-30 top-0 left-0">
+    <div className="bg-dark-primary">
+      <navbar
+        className="
+      flex p-2 items-center justify-between w-full fixed
+      bg-dark-primary z-30 top-0 left-0
+      "
+      >
         <div className="flex items-center gap-4">
           <div
             onClick={handleOpenDialog}
@@ -46,10 +51,10 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
       </navbar>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         <main className="relative top-12">{children}</main>
       </div>
-      <footer className="mt-20 border-solid border border-t-white-divider">
+      <footer className="mt-20 border-t border-t-white-divider">
         <p className="text-white-primary p-4 text-center">
           Powered by MarvelMiles Technologies ©{new Date().getFullYear()}. All
           Rights Reserved.

@@ -1,11 +1,18 @@
+import { cn } from "@/lib/utils";
 import React from "react";
-import { cn } from "../lib/utils";
 
-const Button = ({ children, className = "", ...rest }) => {
+const Button = ({ children, size = "", className = "", ...rest }) => {
   return (
     <button
       {...rest}
-      className={cn("paper mini outline-none shadow-none", className)}
+      className={cn(
+        `
+        paper outline-none shadow-none disabled:opacity-40
+        disabled:cursor-not-allowed font-semibold transition-colors
+        `,
+        { mini: "mini" }[size],
+        className
+      )}
     >
       {children}
     </button>

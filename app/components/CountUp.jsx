@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import { cn } from "../lib/utils";
 
 const CountUp = ({
   to = 100,
@@ -33,13 +33,13 @@ const CountUp = ({
       <h1
         className={cn(
           `
-        text-white-primary font-extrabold text-xl
-        inline-block min-w-[34px] text-right
+        text-white-primary/90 font-extrabold text-xl
+        inline-block min-w-[80px] text-center
         `,
           className
         )}
       >
-        {count}
+        {count}+
       </h1>
     </motion.div>
   );
