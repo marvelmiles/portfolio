@@ -1,44 +1,30 @@
 import React from "react";
 import Typography from "./Typography";
-import { GiOfficeChair } from "react-icons/gi";
 import { IoIosGitNetwork } from "react-icons/io";
 import { TbBrandOffice } from "react-icons/tb";
 
 const Experience = () => {
   const experiences = [
     {
-      name: "Frontend Developer",
+      name: "Full-stack Engineer",
+      company: "SozoRock Health",
+      href: "",
+      startYear: "Feb 2024",
+      endYear: "Aug 2024",
+    },
+    {
+      name: "Full-stack Engineer",
+      company: "Caltextrader",
+      href: "https://caltextrader.com/",
+      startYear: "Aug 2023",
+      endYear: "Jan 2024",
+    },
+    {
+      name: "Lead Frontend Developer",
       company: "Accomease",
       href: "",
-      startYear: 2023,
-    },
-    {
-      name: "Frontend Developer",
-      company: "Accomease",
-      href: "http://www.f.com",
-      startYear: 2023,
-      endYear: 2204,
-    },
-    {
-      name: "Frontend Developer",
-      company: "Accomease",
-      href: "",
-      timeline: "3 month",
-    },
-    {
-      name: "Frontend Developer",
-      company: "Accomease",
-      href: "http://www.f.com",
-    },
-    {
-      name: "Frontend Developer",
-      company: "Accomease",
-      href: "",
-    },
-    {
-      name: "Frontend Developer",
-      company: "Accomease",
-      href: "http://www.f.com",
+      startYear: "Mar 2020",
+      endYear: "Aug 2020",
     },
   ];
 
@@ -49,13 +35,26 @@ const Experience = () => {
         {experiences.map((e, i) => (
           <div key={i} className="paper flex flex-col gap-8 !p-6">
             <div className="flex flex-col gap-2">
-              <Typography className="text-green-primary font-bold tracking-widest">
-                {e.timeline
-                  ? e.timeline + " contract work"
-                  : (e.startYear || new Date().getFullYear()) +
-                    " - " +
-                    (e.endYear || "Present")}
-              </Typography>
+              <div>
+                <Typography className="text-green-primary font-bold tracking-widest">
+                  {e.timeline
+                    ? e.timeline + " contract work"
+                    : (e.startYear || new Date().getFullYear()) +
+                      " - " +
+                      (e.endYear || "Present")}
+                </Typography>
+                {e.isContract ? (
+                  <Typography
+                    variant="subTitle"
+                    className="
+                  text-white-primary/60 font-semibold tracking-widest 
+                  not-italic
+                  "
+                  >
+                    Contract Based
+                  </Typography>
+                ) : null}
+              </div>
               <div className="flex items-center gap-2">
                 <IoIosGitNetwork size={24} className="text-white-primary/70" />
                 <Typography
@@ -66,16 +65,18 @@ const Experience = () => {
                 </Typography>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              {/* <div className="dot" /> */}
-              <TbBrandOffice size={24} className="text-white-primary/60" />
-              <Typography
-                className="
+            <div>
+              <div className="flex items-center gap-2">
+                {/* <div className="dot" /> */}
+                <TbBrandOffice size={24} className="text-white-primary/60" />
+                <Typography
+                  className="
               text-white-primary/60 break-all font-semibold tracking-widest
               "
-              >
-                {e.company}
-              </Typography>
+                >
+                  {e.company}
+                </Typography>
+              </div>
             </div>
           </div>
         ))}

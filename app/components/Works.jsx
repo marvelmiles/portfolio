@@ -22,12 +22,29 @@ const Works = () => {
   const projects = {
     "Web App": [
       {
+        img: "/images/soulmater.png",
+        title: "Soulmater",
+        desc: "Soulmater is a platform that connects you with your soulmate.",
+        href: "https://soulmater.vercel.app",
+        github: "https://github.com/marvelmiles/soulmater",
+        tech: ["Next.js", "intersection-observer", "Shadcn-ui", "Node.js"],
+      },
+
+      {
         img: "/images/soshare.png",
         title: "Soshare",
         desc: "Mini social platform for sharing videos and posts within a vibrant community.",
         href: "https://soshare.onrender.com",
         github: "https://github.com/marvelmiles/soshare",
         tech: ["Firebase", "Socket.io", "JWT", "Axios", "React-multi-carousel"],
+      },
+      {
+        img: "/images/krypt-web3.png",
+        title: "Krypt-web3",
+        desc: "Web3 based project to buy and sell trusted crypto",
+        href: "https://krypt-web3-wine.vercel.app/",
+        github: "https://github.com/marvelmiles/krypt-web3",
+        tech: ["Framer motion", "Tailwindcss", "Ethers", "Solidity"],
       },
       {
         img: "/images/react-admin-panel.png",
@@ -101,7 +118,7 @@ const Works = () => {
             // tabs={["Web App", "Mobile App"]}
 
             renderTab={({ activeTab }) => {
-              const skip = page * 4;
+              const skip = page * 3;
 
               return (
                 <div

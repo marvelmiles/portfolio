@@ -11,7 +11,7 @@ const Stats = () => {
       className: "min-w-[45px]",
     },
     {
-      num: 38,
+      num: 35,
       text: "Projects completed",
 
       className: "min-w-[99px]",
@@ -22,7 +22,7 @@ const Stats = () => {
       className: "min-w-[70px]",
     },
     {
-      num: 1530,
+      num: 1398,
       text: "Code contributions",
       className: "min-w-[140px]",
     },
