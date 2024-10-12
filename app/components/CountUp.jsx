@@ -23,7 +23,7 @@ const CountUp = ({
         ease,
       },
     });
-  }, [controls, to, duration, delay]);
+  }, [controls, to, duration, delay, ease]);
 
   return (
     <motion.div

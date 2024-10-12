@@ -40,7 +40,7 @@ const TabsY = ({
         setAnimateTab([getEnterAnimate(_transition)]);
       }, 500);
     },
-    [getEnterAnimate]
+    [getEnterAnimate, transition]
   );
 
   const apiProps = useMemo(
