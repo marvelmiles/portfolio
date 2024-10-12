@@ -18,7 +18,7 @@ const TabsY = ({
       ({
         fade: { opacity: 1 },
       }[_transition] || { y: 0, opacity: 1 }),
-    []
+    [transition]
   );
 
   const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]);

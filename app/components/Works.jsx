@@ -174,9 +174,9 @@ const Works = () => {
                                       </h4>
                                       <div
                                         className="
-          flex flex-wrap sm:flex-nowrap flex-1 justify-end
-          items-end gap-2 text-white-primary
-          "
+                                        flex flex-wrap sm:flex-nowrap flex-1 justify-end 
+                                        items-end gap-2 text-white-primary
+                                        "
                                       >
                                         {[
                                           {
