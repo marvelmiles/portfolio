@@ -23,8 +23,10 @@
   input:-webkit-autofill:focus,
   textarea:-webkit-autofill:focus,
   select:-webkit-autofill:focus {
-    transition: background-color 5000s ease-in-out 0s !important;
-    @apply caret-white-milk text-white-milk bg-transparent;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.8) inset;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8);
+    @apply caret-white-milk text-white-milk;
   }
 
   :root {

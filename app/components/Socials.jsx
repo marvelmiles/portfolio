@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { Fade } from "react-reveal";
 import { anchorAttrs, mySocials } from "../constants";
+import { copyToClipboard } from "@/lib/utils";
 
 const Socials = ({
   className,
@@ -42,6 +43,7 @@ const Socials = ({
           icon: FiPhone,
           title: mySocials.phone,
           nullify: !withPhone,
+          onClick: () => copyToClipboard(mySocials.phone),
         },
       ].map((s, i) => {
         if (s.nullify) return null;
@@ -50,7 +52,7 @@ const Socials = ({
 
         return (
           <Fade bottom key={i} {...props}>
-            <a key={i} href={s.href} {...anchorAttrs}>
+            <a key={i} href={s.href} {...anchorAttrs} onClick={s.onClick}>
               <div
                 className="bg-white-divider hover:bg-white-paper break-words text-white-primary rounded-3xl p-2 flex items-center gap-2"
                 style={{
