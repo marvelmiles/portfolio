@@ -13,29 +13,35 @@ const TabsY = ({
   transition = "vertical",
   setTabsApi,
 }) => {
-  const getEnterAnimate = (_transition = transition) =>
-    ({
-      fade: { opacity: 1 },
-    }[_transition] || { y: 0, opacity: 1 });
+  const getEnterAnimate = useCallback(
+    (_transition = transition) =>
+      ({
+        fade: { opacity: 1 },
+      }[_transition] || { y: 0, opacity: 1 }),
+    []
+  );
 
   const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]);
   const [animateTab, setAnimateTab] = useState(getEnterAnimate());
 
-  const handleTransition = useCallback((tab, _transition = transition) => {
-    setAnimateTab([
-      {
-        fade: {
-          opacity: 0,
-        },
-      }[_transition] || { y: 100, opacity: 0 },
-    ]);
+  const handleTransition = useCallback(
+    (tab, _transition = transition) => {
+      setAnimateTab([
+        {
+          fade: {
+            opacity: 0,
+          },
+        }[_transition] || { y: 100, opacity: 0 },
+      ]);
 
-    setTimeout(() => {
-      typeof tab === "function" ? tab() : setActiveTab(tab);
+      setTimeout(() => {
+        typeof tab === "function" ? tab() : setActiveTab(tab);
 
-      setAnimateTab([getEnterAnimate(_transition)]);
-    }, 500);
-  }, []);
+        setAnimateTab([getEnterAnimate(_transition)]);
+      }, 500);
+    },
+    [getEnterAnimate]
+  );
 
   const apiProps = useMemo(
     () => ({

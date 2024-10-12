@@ -2,6 +2,8 @@ import React from "react";
 import Typography from "./Typography";
 import { IoIosGitNetwork } from "react-icons/io";
 import { TbBrandOffice } from "react-icons/tb";
+import Link from "next/link";
+import { anchorAttrs } from "../constants";
 
 const Experience = () => {
   const experiences = [
@@ -70,9 +72,13 @@ const Experience = () => {
                 {/* <div className="dot" /> */}
                 <TbBrandOffice size={24} className="text-white-primary/60" />
                 <Typography
-                  className="
-              text-white-primary/60 break-all font-semibold tracking-widest
-              "
+                  {...anchorAttrs}
+                  as={e.href ? Link : undefined}
+                  href={e.href}
+                  className={`
+                  text-white-primary/60 break-all font-semibold 
+                  tracking-widest ${e.href ? "underline" : ""}
+                  `}
                 >
                   {e.company}
                 </Typography>

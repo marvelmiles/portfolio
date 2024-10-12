@@ -38,6 +38,7 @@ const Stats = () => {
       >
         {stats.map((stat, i) => (
           <div
+            key={i}
             className="
             flex items-center gap-3 justify-center flex-col w-full 
             sm:w-auto mdl:flex-row
