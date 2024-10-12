@@ -13,6 +13,20 @@
   section {
     @apply mt-20  first-of-type:mt-0 overflow-hidden;
   }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  textarea:-webkit-autofill:hover,
+  select:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s !important;
+    @apply caret-white-milk text-white-milk bg-transparent;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
