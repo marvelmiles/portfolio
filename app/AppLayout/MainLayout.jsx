@@ -45,7 +45,11 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
         <div className="flex gap-2 items-center">
-          <NavLinks className="hidden md:flex" key="navbar" />
+          <NavLinks
+            className="hidden md:flex"
+            key="navbar"
+            onClick={closeDialog}
+          />
           <div className="hidden s200:block">
             <ResumeBtn />
           </div>

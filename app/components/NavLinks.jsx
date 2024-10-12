@@ -7,7 +7,7 @@ import { CiMail } from "react-icons/ci";
 import { Fade } from "react-reveal";
 import Link from "next/link";
 
-const NavLinks = ({ className, itemClassName, width }) => {
+const NavLinks = ({ className, itemClassName, width, onClick }) => {
   const [to, setTo] = useState("");
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const NavLinks = ({ className, itemClassName, width }) => {
           href: "contact",
         },
       ].map((u, i) => (
-        <div key={i} style={{ width }}>
+        <div key={i} style={{ width }} onClick={onClick}>
           <Fade
             bottom
             delay={0}
